@@ -1,0 +1,45 @@
+<head>
+<link type="text/css" rel="stylesheet" href="first_style.css">
+<script>
+function change_background() {
+    document.body.style.backgroundColor = document.getElementById("color").value;
+}
+</script>
+
+<!--<script>
+    function calc_daystogo(){
+        var currentdate = new Date();
+        var result = (currentdate - document.getElementById("bday").value);
+    }
+</script>-->
+</head>
+<body>
+<section>
+    <h2 id="main-title">welcome to my first website!</h2>
+</section>
+<section id="pre1">
+    <p>Enter your data:</p>
+    <p id="sname">Enter your name</p>
+    <input type="text" id="name">
+    <p id="scolor">Enter your favorite color:</p>
+    <input type="text" id="color"  onblur="change_background()">
+    <p id="sbday">Enter your Birthday:</p>
+    <input type="date" id="bday">
+</section>
+<section id="pre2">
+    <p>Hi <span id="namev"> </span><br>Your birthday is on: <span id="bdayv"> </span></p>
+</section>
+</body>
+
+<script>
+    document.querySelector("#bday").addEventListener("keyup", function(evt){
+    var thebday = evt.currentTarget.value;
+    document.querySelector("#bdayv").innerText = thebday;
+});
+</script>
+<script>
+    document.querySelector("#name").addEventListener("blur", function(evnt){
+    var thename = evnt.currentTarget.value;
+    document.querySelector("#namev").innerText = thename;
+});
+</script>
